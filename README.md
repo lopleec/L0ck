@@ -128,50 +128,31 @@ xcodebuild \
 
 ### First launch
 
-When L0ck launches for the first time, it walks through onboarding:
+On first launch, L0ck guides you through:
 
-1. Introduction to how the app works
-2. Device key creation in the macOS login keychain
-3. Optional app password setup
-4. Key backup guidance
+1. device key creation
+2. optional app password setup
+3. key backup guidance
 
-### Encrypt a file
+### Encrypt and manage files
 
 1. Click `Import`
-2. Choose the source file
+2. Choose a source file
 3. Set the file password
-4. Choose where the encrypted file should live:
-   - `App Folder`
-   - `Same Folder`
-5. Optionally delete the original file after encryption
+4. Choose `App Folder` or `Same Folder`
+5. Open the record from the sidebar to preview, export, re-protect, or delete it later
 
-### Open or preview a file
+### Preview and export
 
-1. Select a `.l0ck` record in the sidebar
-2. Click `Preview`
-3. Enter the file password
-4. View the content in-app or through embedded Quick Look
+- `Preview` opens the file after password verification
+- `Export` writes a decrypted copy to a location you choose
+- `Universal .l0ck…` creates a portable password-only encrypted file for cross-Mac sharing
 
-### Export a decrypted copy
+### Cleanup and deletion
 
-1. Open a file record
-2. Click `Export`
-3. Enter the file password
-4. Choose where the decrypted copy should be saved
-
-### Export a portable `Universal .l0ck`
-
-1. Open a file record
-2. Click `Universal .l0ck…`
-3. Enter the current file password
-4. Set a new strong export password
-5. Save the portable encrypted file
-
-### Delete protected encrypted files
-
-- Files managed by L0ck can be deleted from the detail view or sidebar
+- Invalid records can be removed from the sidebar
+- Protected `.l0ck` files can be deleted from the app
 - Arbitrary `.l0ck` files can also be deleted through `More -> Delete .l0ck File…`
-- Protected delete operations can require administrator authorization
 
 ## Settings
 
@@ -293,6 +274,59 @@ L0ck currently uses two serialized `.l0ck` payload versions:
 
 Each file starts with the `L0CK` magic header and then stores the version-specific encrypted payload.
 
+## Security Assessment
+
+### Threat model
+
+L0ck is strongest against:
+
+- someone who only gets a copied `.l0ck` file
+- casual local deletion or movement of protected encrypted files
+- accidental plaintext exposure during normal app usage
+
+It is weaker against:
+
+- compromise of the same Mac while the user session is unlocked
+- malware running as the same user
+- weak user-chosen passwords
+- highly privileged attackers with full control of the machine
+
+### Practical cracking difficulty
+
+For standard device-bound `.l0ck` files:
+
+- an attacker who only steals the encrypted file does not have enough material to decrypt it
+- the file password alone is not sufficient
+- the attacker also needs the device-bound secrets from the target Mac's keychain
+
+In practical terms, that makes standard `.l0ck` files much harder to crack offline than a normal password-only encrypted archive.
+
+For `Universal .l0ck` files:
+
+- cracking is theoretically more straightforward because the format is password-only
+- however, the exported file still uses a strong password policy and a high PBKDF2 cost
+- security depends heavily on the actual strength of the export password
+
+### What most likely breaks first
+
+The most realistic failure points are usually not the AES or Curve25519 primitives themselves, but:
+
+- weak file passwords
+- weak portable export passwords
+- an attacker gaining access to the unlocked Mac account
+- plaintext exposure through user exports or external preview apps
+- unsafe handling of key backup files
+
+### Security level summary
+
+- Standard `.l0ck`: strong local-first design, especially when the attacker does not control the original Mac
+- `Universal .l0ck`: reasonable portable encryption, but clearly weaker than the device-bound default
+- App lock and protected deletion: useful defense-in-depth, but not a substitute for the core cryptography
+
+### Important honesty note
+
+This project has not been through a formal third-party security audit, so it should be described as security-focused and security-conscious, not as high-assurance or independently verified cryptographic software.
+
 ## Project Structure
 
 ```text
@@ -310,14 +344,6 @@ L0ck/
 ├── LICENSE
 └── README.md
 ```
-
-## Security Notes
-
-- This project has not been through a formal third-party security audit
-- `Universal .l0ck` is less strict than the default device-bound mode
-- Quick Look preview can require a temporary decrypted file on disk
-- Local protection is strongest when using `App Folder`
-- Key backups should be treated as highly sensitive material
 
 ## Current Limitations
 
