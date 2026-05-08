@@ -1,0 +1,21 @@
+# macOS
+.DS_Store
+._*
+
+# Xcode
+DerivedData/
+build/
+*.xcuserstate
+xcuserdata/
+
+# SwiftPM
+.build/
+.swiftpm/
+
+# Logs and temp files
+*.log
+*.tmp
+*.swp
+
+# Local tooling
+.codex/

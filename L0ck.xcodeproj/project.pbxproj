@@ -1,0 +1,481 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4B0000000000000000000001 /* L0ckApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0000000000000000000001 /* L0ckApp.swift */; };
+		4B0000000000000000000002 /* CryptoEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0000000000000000000002 /* CryptoEngine.swift */; };
+		4B0000000000000000000003 /* KeyDerivation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0000000000000000000003 /* KeyDerivation.swift */; };
+		4B0000000000000000000004 /* ECIESEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0000000000000000000004 /* ECIESEngine.swift */; };
+		4B0000000000000000000005 /* L0ckFileFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0000000000000000000005 /* L0ckFileFormat.swift */; };
+		4B0000000000000000000006 /* EncryptedFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0000000000000000000006 /* EncryptedFile.swift */; };
+		4B0000000000000000000007 /* FileStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0000000000000000000007 /* FileStore.swift */; };
+		4B0000000000000000000008 /* FileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0000000000000000000008 /* FileService.swift */; };
+		4B0000000000000000000009 /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0000000000000000000009 /* KeychainService.swift */; };
+		4B000000000000000000000A /* AdminAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A000000000000000000000A /* AdminAuthService.swift */; };
+		4B000000000000000000000B /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A000000000000000000000B /* MainView.swift */; };
+		4B000000000000000000000C /* FileDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A000000000000000000000C /* FileDetailView.swift */; };
+		4B000000000000000000000D /* ImportSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A000000000000000000000D /* ImportSheet.swift */; };
+		4B000000000000000000000E /* PasswordPrompt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A000000000000000000000E /* PasswordPrompt.swift */; };
+		4B000000000000000000000F /* SetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A000000000000000000000F /* SetupView.swift */; };
+		4B0000000000000000000010 /* KeyBackupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0000000000000000000010 /* KeyBackupView.swift */; };
+		4B0000000000000000000011 /* FileRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0000000000000000000011 /* FileRow.swift */; };
+		4B0000000000000000000012 /* StatusBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0000000000000000000012 /* StatusBadge.swift */; };
+		4B0000000000000000000013 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A0000000000000000000013 /* Assets.xcassets */; };
+		4B0000000000000000000014 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4A0000000000000000000018 /* Localizable.strings */; };
+		4B0000000000000000000015 /* AppLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0000000000000000000019 /* AppLanguage.swift */; };
+		4B0000000000000000000016 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A000000000000000000001A /* SettingsView.swift */; };
+		4B0000000000000000000017 /* AppSessionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A000000000000000000001B /* AppSessionState.swift */; };
+		4B0000000000000000000018 /* AppLockPasswordSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A000000000000000000001C /* AppLockPasswordSheet.swift */; };
+		4B0000000000000000000019 /* AppUnlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A000000000000000000001D /* AppUnlockView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4A0000000000000000000001 /* L0ckApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = L0ckApp.swift; sourceTree = "<group>"; };
+		4A0000000000000000000002 /* CryptoEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoEngine.swift; sourceTree = "<group>"; };
+		4A0000000000000000000003 /* KeyDerivation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyDerivation.swift; sourceTree = "<group>"; };
+		4A0000000000000000000004 /* ECIESEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECIESEngine.swift; sourceTree = "<group>"; };
+		4A0000000000000000000005 /* L0ckFileFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = L0ckFileFormat.swift; sourceTree = "<group>"; };
+		4A0000000000000000000006 /* EncryptedFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncryptedFile.swift; sourceTree = "<group>"; };
+		4A0000000000000000000007 /* FileStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileStore.swift; sourceTree = "<group>"; };
+		4A0000000000000000000008 /* FileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileService.swift; sourceTree = "<group>"; };
+		4A0000000000000000000009 /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
+		4A000000000000000000000A /* AdminAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminAuthService.swift; sourceTree = "<group>"; };
+		4A000000000000000000000B /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		4A000000000000000000000C /* FileDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDetailView.swift; sourceTree = "<group>"; };
+		4A000000000000000000000D /* ImportSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportSheet.swift; sourceTree = "<group>"; };
+		4A000000000000000000000E /* PasswordPrompt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordPrompt.swift; sourceTree = "<group>"; };
+		4A000000000000000000000F /* SetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupView.swift; sourceTree = "<group>"; };
+		4A0000000000000000000010 /* KeyBackupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyBackupView.swift; sourceTree = "<group>"; };
+		4A0000000000000000000011 /* FileRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileRow.swift; sourceTree = "<group>"; };
+		4A0000000000000000000012 /* StatusBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBadge.swift; sourceTree = "<group>"; };
+		4A0000000000000000000013 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4A0000000000000000000014 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4A0000000000000000000015 /* L0ck.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = L0ck.entitlements; sourceTree = "<group>"; };
+		4A0000000000000000000016 /* L0ck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = L0ck.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A0000000000000000000017 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		4A0000000000000000000019 /* AppLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLanguage.swift; sourceTree = "<group>"; };
+		4A000000000000000000001A /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		4A000000000000000000001B /* AppSessionState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSessionState.swift; sourceTree = "<group>"; };
+		4A000000000000000000001C /* AppLockPasswordSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLockPasswordSheet.swift; sourceTree = "<group>"; };
+		4A000000000000000000001D /* AppUnlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUnlockView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4F0000000000000000000003 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4C0000000000000000000001 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				4C0000000000000000000002 /* L0ck */,
+				4C0000000000000000000008 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4C0000000000000000000002 /* L0ck */ = {
+			isa = PBXGroup;
+			children = (
+				4A0000000000000000000001 /* L0ckApp.swift */,
+				4A0000000000000000000014 /* Info.plist */,
+				4A0000000000000000000015 /* L0ck.entitlements */,
+				4A0000000000000000000013 /* Assets.xcassets */,
+				4A0000000000000000000018 /* Localizable.strings */,
+				4A0000000000000000000019 /* AppLanguage.swift */,
+				4C0000000000000000000003 /* Crypto */,
+				4C0000000000000000000004 /* Models */,
+				4C0000000000000000000005 /* Services */,
+				4C0000000000000000000006 /* Views */,
+			);
+			path = L0ck;
+			sourceTree = "<group>";
+		};
+		4C0000000000000000000003 /* Crypto */ = {
+			isa = PBXGroup;
+			children = (
+				4A0000000000000000000002 /* CryptoEngine.swift */,
+				4A0000000000000000000003 /* KeyDerivation.swift */,
+				4A0000000000000000000004 /* ECIESEngine.swift */,
+				4A0000000000000000000005 /* L0ckFileFormat.swift */,
+			);
+			path = Crypto;
+			sourceTree = "<group>";
+		};
+		4C0000000000000000000004 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4A0000000000000000000006 /* EncryptedFile.swift */,
+				4A0000000000000000000007 /* FileStore.swift */,
+				4A000000000000000000001B /* AppSessionState.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4C0000000000000000000005 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				4A0000000000000000000008 /* FileService.swift */,
+				4A0000000000000000000009 /* KeychainService.swift */,
+				4A000000000000000000000A /* AdminAuthService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		4C0000000000000000000006 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4A000000000000000000000B /* MainView.swift */,
+				4A000000000000000000000C /* FileDetailView.swift */,
+				4A000000000000000000000D /* ImportSheet.swift */,
+				4A000000000000000000000E /* PasswordPrompt.swift */,
+				4A000000000000000000000F /* SetupView.swift */,
+				4A0000000000000000000010 /* KeyBackupView.swift */,
+				4A000000000000000000001C /* AppLockPasswordSheet.swift */,
+				4A000000000000000000001D /* AppUnlockView.swift */,
+				4A000000000000000000001A /* SettingsView.swift */,
+				4C0000000000000000000007 /* Components */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4C0000000000000000000007 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				4A0000000000000000000011 /* FileRow.swift */,
+				4A0000000000000000000012 /* StatusBadge.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		4C0000000000000000000008 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4A0000000000000000000016 /* L0ck.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4D0000000000000000000001 /* L0ck */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5100000000000000000000E1 /* Build configuration list for PBXNativeTarget "L0ck" */;
+			buildPhases = (
+				4F0000000000000000000001 /* Sources */,
+				4F0000000000000000000002 /* Resources */,
+				4F0000000000000000000003 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = L0ck;
+			productName = L0ck;
+			productReference = 4A0000000000000000000016 /* L0ck.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4E0000000000000000000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					4D0000000000000000000001 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+				};
+			};
+			buildConfigurationList = 5100000000000000000000E2 /* Build configuration list for PBXProject "L0ck" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				"zh-Hans",
+			);
+			mainGroup = 4C0000000000000000000001 /* Root */;
+			productRefGroup = 4C0000000000000000000008 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4D0000000000000000000001 /* L0ck */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4F0000000000000000000002 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4B0000000000000000000013 /* Assets.xcassets in Resources */,
+				4B0000000000000000000014 /* Localizable.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		4A0000000000000000000018 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4A0000000000000000000017 /* zh-Hans */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4F0000000000000000000001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4B0000000000000000000001 /* L0ckApp.swift in Sources */,
+				4B0000000000000000000002 /* CryptoEngine.swift in Sources */,
+				4B0000000000000000000003 /* KeyDerivation.swift in Sources */,
+				4B0000000000000000000004 /* ECIESEngine.swift in Sources */,
+				4B0000000000000000000005 /* L0ckFileFormat.swift in Sources */,
+				4B0000000000000000000006 /* EncryptedFile.swift in Sources */,
+				4B0000000000000000000007 /* FileStore.swift in Sources */,
+				4B0000000000000000000017 /* AppSessionState.swift in Sources */,
+				4B0000000000000000000008 /* FileService.swift in Sources */,
+				4B0000000000000000000009 /* KeychainService.swift in Sources */,
+				4B000000000000000000000A /* AdminAuthService.swift in Sources */,
+				4B000000000000000000000B /* MainView.swift in Sources */,
+				4B000000000000000000000C /* FileDetailView.swift in Sources */,
+				4B000000000000000000000D /* ImportSheet.swift in Sources */,
+				4B000000000000000000000E /* PasswordPrompt.swift in Sources */,
+				4B000000000000000000000F /* SetupView.swift in Sources */,
+				4B0000000000000000000010 /* KeyBackupView.swift in Sources */,
+				4B0000000000000000000018 /* AppLockPasswordSheet.swift in Sources */,
+				4B0000000000000000000019 /* AppUnlockView.swift in Sources */,
+				4B0000000000000000000011 /* FileRow.swift in Sources */,
+				4B0000000000000000000012 /* StatusBadge.swift in Sources */,
+				4B0000000000000000000015 /* AppLanguage.swift in Sources */,
+				4B0000000000000000000016 /* SettingsView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		5000000000000000000000D1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = L0ck/L0ck.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = L0ck/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = L0ck;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.l0ck.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		5000000000000000000000D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = L0ck/L0ck.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = L0ck/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = L0ck;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.l0ck.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		5000000000000000000000D3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_STRICT_CONCURRENCY = minimal;
+			};
+			name = Debug;
+		};
+		5000000000000000000000D4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_STRICT_CONCURRENCY = minimal;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5100000000000000000000E1 /* Build configuration list for PBXNativeTarget "L0ck" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5000000000000000000000D1 /* Debug */,
+				5000000000000000000000D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5100000000000000000000E2 /* Build configuration list for PBXProject "L0ck" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5000000000000000000000D3 /* Debug */,
+				5000000000000000000000D4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+	};
+	rootObject = 4E0000000000000000000001 /* Project object */;
+}
