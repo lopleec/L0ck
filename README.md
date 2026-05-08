@@ -147,6 +147,7 @@ On first launch, L0ck guides you through:
 - `Preview` opens the file after password verification
 - `Export` writes a decrypted copy to a location you choose
 - `Universal .l0ck…` creates a portable password-only encrypted file for cross-Mac sharing
+- For highly sensitive files, avoid unnecessary preview or plaintext export
 
 ### Cleanup and deletion
 
@@ -276,56 +277,93 @@ Each file starts with the `L0CK` magic header and then stores the version-specif
 
 ## Security Assessment
 
-### Threat model
+### What an attacker needs
 
-L0ck is strongest against:
+For standard device-bound `.l0ck` files, an offline attacker normally needs all of the following:
 
-- someone who only gets a copied `.l0ck` file
-- casual local deletion or movement of protected encrypted files
-- accidental plaintext exposure during normal app usage
+- the `.l0ck` file itself
+- the correct file password, or enough guesses to find it
+- the device-bound master secret from the original Mac's keychain
+- the device-bound Curve25519 private key from the original Mac's keychain
 
-It is weaker against:
+That means a copied `.l0ck` file by itself is not enough.
 
-- compromise of the same Mac while the user session is unlocked
-- malware running as the same user
-- weak user-chosen passwords
-- highly privileged attackers with full control of the machine
+For `Universal .l0ck`, the attacker only needs:
 
-### Practical cracking difficulty
+- the encrypted file
+- the correct export password, or enough guesses to find it
 
-For standard device-bound `.l0ck` files:
+That is why `Universal .l0ck` is more portable, but also a weaker model than the default device-bound format.
 
-- an attacker who only steals the encrypted file does not have enough material to decrypt it
-- the file password alone is not sufficient
-- the attacker also needs the device-bound secrets from the target Mac's keychain
+### Rough password-guessing cost
 
-In practical terms, that makes standard `.l0ck` files much harder to crack offline than a normal password-only encrypted archive.
+These numbers are only rough order-of-magnitude estimates, not guarantees.
 
-For `Universal .l0ck` files:
+- Public hashcat benchmark data for PBKDF2-SHA512 on an RTX 4090 shows about `2,825,700` guesses per second at `1,023` iterations
+- If you scale that roughly to L0ck's `350,000` PBKDF2 iterations, you get about `8,000 to 8,500` guesses per second
+- If you scale it to `1,000,000` iterations, you get about `2,800 to 2,900` guesses per second
 
-- cracking is theoretically more straightforward because the format is password-only
-- however, the exported file still uses a strong password policy and a high PBKDF2 cost
-- security depends heavily on the actual strength of the export password
+What that means in practice:
 
-### What most likely breaks first
+- An `8`-character random lowercase password (`26^8`) is not enough. Full search is on the order of months at these speeds.
+- An `8`-character random base62 password (`A-Z`, `a-z`, `0-9`) is much stronger. Full search is on the order of centuries.
+- A `10`-character random base62 password is on the order of millions of years for full search on a single top-end consumer GPU.
 
-The most realistic failure points are usually not the AES or Curve25519 primitives themselves, but:
+Important caveat:
+
+- human-chosen passwords are usually far weaker than random passwords
+- dictionary attacks, password reuse, and pattern-based guessing can collapse those times dramatically
+- for standard device-bound `.l0ck`, these password-guessing numbers matter only after the attacker also gets the local keychain secrets or equivalent access to the original Mac
+
+### What is most likely to fail first
+
+The most realistic risks are usually not "breaking AES" or "breaking Curve25519".
+
+They are more likely to be:
 
 - weak file passwords
-- weak portable export passwords
-- an attacker gaining access to the unlocked Mac account
-- plaintext exposure through user exports or external preview apps
-- unsafe handling of key backup files
+- weak `Universal .l0ck` export passwords
+- compromise of the same Mac while the user session is unlocked
+- malware running as the same user
+- plaintext exposure through manual export
+- sensitive content being exposed during preview through temporary decrypted copies
+- unsafe storage of key backup files
 
-### Security level summary
+### Preview risk
 
-- Standard `.l0ck`: strong local-first design, especially when the attacker does not control the original Mac
-- `Universal .l0ck`: reasonable portable encryption, but clearly weaker than the device-bound default
-- App lock and protected deletion: useful defense-in-depth, but not a substitute for the core cryptography
+Preview is convenient, but it is not the safest path for extremely sensitive material.
 
-### Important honesty note
+- Text, image, and PDF preview can stay in-app
+- Some file types require Quick Look and therefore a temporary decrypted file on disk
+- L0ck tries to hide, lock, and delete that temporary copy quickly
+- However, the app cannot guarantee what other software, Quick Look plugins, system services, or external viewers may cache once plaintext has existed on the machine
 
-This project has not been through a formal third-party security audit, so it should be described as security-focused and security-conscious, not as high-assurance or independently verified cryptographic software.
+For highly sensitive files, the safest practice is:
+
+- avoid preview unless necessary
+- avoid `Universal .l0ck` unless portability is required
+- avoid exporting plaintext copies unless absolutely necessary
+- prefer `App Folder`
+
+### App lock and protection boundaries
+
+The app password is useful, but it is not the same thing as file encryption.
+
+- It protects the app entry flow
+- It does not replace the file password
+- It does not make a compromised unlocked macOS session safe
+
+Likewise, delete protection and admin-gated operations are defense-in-depth features, not substitutes for strong passwords and secure device hygiene.
+
+### Honest warning
+
+This app is not perfect.
+
+- It has not been through a formal third-party security audit
+- We try to improve each version, but we cannot promise 100% security
+- Bugs, design mistakes, macOS behavior changes, third-party preview behavior, or unsafe user practices can still create exposure
+
+L0ck should be described as security-focused software, not as formally verified or guaranteed unbreakable software.
 
 ## Project Structure
 
