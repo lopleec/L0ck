@@ -5,6 +5,12 @@
 ![framework](https://img.shields.io/badge/framework-SwiftUI-FA7343?style=flat)
 ![license](https://img.shields.io/badge/license-GPLv3-4A90E2?style=flat)
 
+### Quick Links
+[Install L0ck](https://github.com/lopleec/L0ck/tree/main#build-and-run)
+[Security of L0ck](https://github.com/lopleec/L0ck/tree/main#implementation-overview)
+[Open Source License](https://github.com/lopleec/L0ck/tree/main#license)
+
+### Introduction
 L0ck is a security-focused native macOS file encryption app built with SwiftUI.
 
 It turns files into `.l0ck` containers, binds standard encrypted files to the current Mac through Keychain-backed secrets, protects preview flows, and adds system-level friction around deleting or moving encrypted files without administrator authorization.
