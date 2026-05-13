@@ -4,7 +4,6 @@
 ![language](https://img.shields.io/badge/language-Swift-F05138?style=flat)
 ![framework](https://img.shields.io/badge/framework-SwiftUI-FA7343?style=flat)
 ![license](https://img.shields.io/badge/license-GPLv3-4A90E2?style=flat)
-![security](https://img.shields.io/badge/security-device--bound%20by%20default-111111?style=flat)
 
 L0ck is a security-focused native macOS file encryption app built with SwiftUI.
 
